@@ -1,0 +1,82 @@
+about:
+    author: San Diego Regional Data Library
+    description: !include 'meta/about.description.md'
+    groups:
+    - Infrastructure
+    homepage: http://sandag.org
+    license: other-open
+    maintainer: San Diego Regional Data Library
+    tags:
+    - government
+    - gov-crime
+    title: San Diego Street Lamp Locations
+build:
+    dependencies:
+        extents: clarinova.com-extents-2012-7ba4
+        neighborhoods: sangis.org-neighborhoods-orig-429e.communities.sd
+        places: clarinova.com-places-casnd-7ba4.places
+        streetlights: sangis.org-street_lights-orig-7ba4.street_lights
+    schema_file: meta/schema.csv
+extracts:
+    colormaps:
+        description: QGIS colormap, specifically tuned for the GeoTIFF file
+        done_if: os.path.exists(path)
+        each:
+        -   break: geometric
+            map_name: YlOrRd
+            reversed: false
+            size: 9
+        -   break: geometric
+            map_name: Spectral
+            reversed: true
+            size: 9
+        -   break: geometric
+            map_name: Purples
+            reversed: true
+            size: 9
+        -   break: even
+            map_name: Greys
+            reversed: true
+            size: 9
+        -   break: geometric
+            map_name: Greys
+            reversed: true
+            size: 9
+        function: extract_colormaps
+        name: styles/colors-{map_name}-{size}-{break}.txt
+        zip: dir
+        zipname: styles.zip
+    csv:
+        description: Streetlight locations in CSV format.
+        done_if: os.path.exists(path)
+        name: street_lights.csv
+        partition: clarinova.com-street_lights-casnd-429e.streetlights
+        query: SELECT * from streetlights
+    images:
+        description: A GeoTIFF map of distances from a street lamp, in centimeters.
+            The map is top coded, with the highest value being 12,000, or 120m.
+        done_if: os.path.exists(path)
+        function: extract_image
+        name: sandiego-light-distance.tiff
+        title: Light heatmap
+    shapefile:
+        description: Shape file of incident points in Shapefile format. The file includes
+            attributes for time, date, type, description and address of the incidents.
+        done_if: os.path.exists(path)
+        function: extract_shapefiles
+        layer_name: sandiego-street-lamps
+        name: sandiego-street-lamps.zip
+        zip: file
+identity:
+    creator: eric@sandiegodata.org
+    dataset: street_lights
+    id: a2NgLC
+    name: clarinova.com-street_lights-casnd-429e
+    revision: 1
+    source: clarinova.com
+    variation: casnd
+    vid: a2NgLC/001
+    vname: clarinova.com-street_lights-casnd-429e-r1
+partitions:
+- clarinova.com-street_lights-casnd-429e.streetlights
+- clarinova.com-street_lights-casnd-429e.distance
