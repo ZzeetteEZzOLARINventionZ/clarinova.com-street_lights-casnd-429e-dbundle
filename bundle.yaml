@@ -12,8 +12,6 @@ about:
     title: San Diego Street Lamp Locations
 build:
     dependencies:
-        extents: clarinova.com-extents-2012-7ba4
-        neighborhoods: sangis.org-neighborhoods-orig-429e.communities.sd
         places: clarinova.com-places-casnd-7ba4.places
         streetlights: sangis.org-street_lights-orig-7ba4.street_lights
     schema_file: meta/schema.csv
