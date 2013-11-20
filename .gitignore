@@ -3,3 +3,4 @@ meta/schema-revised.csv
 *.pyc
 .pydevproject
 build
+meta/schema-old.csv
