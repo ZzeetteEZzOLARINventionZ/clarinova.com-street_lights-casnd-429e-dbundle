@@ -1,20 +1,20 @@
-table,column,is_pk,is_fk,i1,i2,i3,i4,i5,type,default,size,description
-streetlights,streetlights_id,1,,,,,,,INTEGER,,,
-streetlights,polenum,,,,,,,,INTEGER,-1,,
-streetlights,sapid,,,,,,,,TEXT,-,13,
-streetlights,eqpid,,,,,,,,TEXT,-,8,
-streetlights,status,,,,,,,,TEXT,-,1,
-streetlights,x,,,,,,,,REAL,-1,,
-streetlights,y,,,,,,,,REAL,-1,,
-streetlights,lon,,,1,,,,,REAL,-200,,
-streetlights,lat,,,1,,,,,REAL,-200,,
-streetlights,city,,,,1,,,,TEXT,-,6,Name of city
-streetlights,neighborhood,,,,,1,,,TEXT,-,6,Neighborhood code
-streetlights,community,,,,,,1,,TEXT,-,6,Community planning area code
-streetlights,council,,,,,,,1,TEXT,-,6,City council district
-streetlights,geometry,,,,,,,1,BLOB,,,
+"table","column","is_pk","is_fk","i1","i2","i3","i4","i5","type","default","size","description"
+"streetlights","streetlights_id",1,,,,,,,"INTEGER",,,
+"streetlights","polenum",,,,,,,,"INTEGER",-1,,
+"streetlights","sapid",,,,,,,,"TEXT","-",13,
+"streetlights","eqpid",,,,,,,,"VARCHAR","-",8,
+"streetlights","status",,,,,,,,"VARCHAR","-",1,
+"streetlights","x",,,,,,,,"REAL",-1,,
+"streetlights","y",,,,,,,,"REAL",-1,,
+"streetlights","lon",,,1,,,,,"REAL",-200,,
+"streetlights","lat",,,1,,,,,"REAL",-200,,
+"streetlights","city",,,,1,,,,"VARCHAR","-",6,"Name of city"
+"streetlights","neighborhood",,,,,1,,,"VARCHAR","-",6,"Neighborhood code"
+"streetlights","community",,,,,,1,,"VARCHAR","-",6,"Community planning area code"
+"streetlights","council",,,,,,,1,"VARCHAR","-",6,"City council district"
+"streetlights","geometry",,,,,,,1,"BLOB",,,
 ,,,,,,,,,,,,
-distance,id,1,,,,,,,INTEGER,,,Placeholder for the raster data file
-distance,x,,,,,,,,INTEGER,,,
-distance,y,,,,,,,,INTEGER,,,
-distance,value,,,,,,,,INTEGER,,,Distance to nearest street lamp in cm
+"distance","id",1,,,,,,,"INTEGER",,,"Placeholder for the raster data file"
+"distance","x",,,,,,,,"INTEGER",,,
+"distance","y",,,,,,,,"INTEGER",,,
+"distance","value",,,,,,,,"INTEGER",,,"Distance to nearest street lamp in cm"
