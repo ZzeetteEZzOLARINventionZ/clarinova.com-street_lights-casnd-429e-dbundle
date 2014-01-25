@@ -3,7 +3,7 @@
 '''
 
 
-from  databundles.bundle import BuildBundle
+from  ambry.bundle import BuildBundle
  
 
 class Bundle(BuildBundle):
@@ -29,7 +29,7 @@ class Bundle(BuildBundle):
         
         from datetime import date
         import ogr
-        from databundles.datasets.geo import US
+        from ambry.datasets.geo import US
       
         place = US(self.library).place('SndSAN')
       
@@ -52,7 +52,7 @@ class Bundle(BuildBundle):
     
  
     def add_places(self):      
-        from databundles.geo.util import segment_points
+        from ambry.geo.util import segment_points
 
         lr = self.init_log_rate(1000)
 
@@ -80,8 +80,8 @@ class Bundle(BuildBundle):
 
     def make_hdf(self):
         
-        import databundles.geo as dg
-        from databundles.geo.analysisarea import get_analysis_area
+        import ambry.geo as dg
+        from ambry.geo.analysisarea import get_analysis_area
         from osgeo.gdalconst import GDT_Float32
         import numpy as np
 
@@ -132,7 +132,7 @@ class Bundle(BuildBundle):
     def make_distance_map(self):
         import numpy as np
         import numpy.ma as ma
-        import databundles.geo as dg
+        import ambry.geo as dg
             
         np.set_printoptions(precision=1, linewidth=240, threshold=10000, suppress = True)
             
@@ -155,7 +155,7 @@ class Bundle(BuildBundle):
         print a
 
     def extract_colormaps(self, data):
-        import databundles.geo.colormap as cm
+        import ambry.geo.colormap as cm
         import numpy as np
 
         raster = self.partitions.find(table='distance')     
@@ -215,8 +215,8 @@ class Bundle(BuildBundle):
 
     def extract_image(self, data):
         
-        import databundles.geo as dg
-        from databundles.geo.analysisarea import get_analysis_area
+        import ambry.geo as dg
+        from ambry.geo.analysisarea import get_analysis_area
 
         place = 'SndSAN'
         
@@ -231,7 +231,7 @@ class Bundle(BuildBundle):
 
     def extract_shapefiles(self, data):
         import pprint
-        from databundles.geo.sfschema import TableShapefile
+        from ambry.geo.sfschema import TableShapefile
 
         name = data['name']
         fpath = self.filesystem.path('extracts', name)
@@ -332,8 +332,8 @@ class Bundle(BuildBundle):
 
     def evari_extract_image(self, data):
         
-        import databundles.geo as dg
-        from databundles.geo.analysisarea import get_analysis_area
+        import ambry.geo as dg
+        from ambry.geo.analysisarea import get_analysis_area
         from osgeo.gdalconst import GDT_Float32
         
         aa = get_analysis_area(self.library, geoid='CG0666000')
@@ -384,9 +384,9 @@ class Bundle(BuildBundle):
 import sys
 
 if __name__ == '__main__':
-    import databundles.run
+    import ambry.run
       
-    databundles.run.run(sys.argv[1:], Bundle)
+    ambry.run.run(sys.argv[1:], Bundle)
      
     
     
