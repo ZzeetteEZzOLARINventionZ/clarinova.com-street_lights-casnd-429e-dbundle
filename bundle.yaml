@@ -66,15 +66,15 @@ extracts:
         name: sandiego-street-lamps.zip
         zip: file
 identity:
-    creator: eric@sandiegodata.org
     dataset: street_lights
-    id: a2NgLC
-    name: clarinova.com-street_lights-casnd-429e
+    id: d00y
     revision: 1
     source: clarinova.com
     variation: casnd
-    vid: a2NgLC/001
-    vname: clarinova.com-street_lights-casnd-429e-r1
-partitions:
-- clarinova.com-street_lights-casnd-429e.streetlights
-- clarinova.com-street_lights-casnd-429e.distance
+    version: 0.1.1
+names:
+    fqname: clarinova.com-street_lights-casnd-0.1.1~d00y001
+    name: clarinova.com-street_lights-casnd
+    vid: d00y001
+    vname: clarinova.com-street_lights-casnd-0.1.1
+partitions: []
