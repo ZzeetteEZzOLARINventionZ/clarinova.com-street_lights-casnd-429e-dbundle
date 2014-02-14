@@ -70,7 +70,7 @@ identity:
     id: d00y
     revision: 1
     source: clarinova.com
-    variation: casnd
+    bspace: casnd
     version: 0.1.1
 names:
     fqname: clarinova.com-street_lights-casnd-0.1.1~d00y001
