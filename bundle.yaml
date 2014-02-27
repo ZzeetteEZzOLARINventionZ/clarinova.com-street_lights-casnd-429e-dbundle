@@ -13,7 +13,7 @@ about:
 build:
     dependencies:
         places: clarinova.com-places-casnd-7ba4.places
-        streetlights: sangis.org-street_lights-orig-7ba4.street_lights
+        streetlights: sangis.org-street_lights-orig-streetlights-geo
     schema_file: meta/schema.csv
 extracts:
     colormaps:
