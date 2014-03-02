@@ -12,7 +12,7 @@ about:
     title: San Diego Street Lamp Locations
 build:
     dependencies:
-        places: clarinova.com-places-casnd-7ba4.places
+        places: clarinova.com-places-casnd-places-geo
         streetlights: sangis.org-street_lights-orig-streetlights-geo
     schema_file: meta/schema.csv
 extracts:
